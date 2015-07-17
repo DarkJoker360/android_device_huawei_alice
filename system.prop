@@ -5,6 +5,9 @@ ro.sys.fw.dex2oat_thread_count=8
 ro.config.max_starting_bg=8
 ro.sys.fw.use_trim_settings=true
 
+# ART
+dalvik.vm.dex2oat-swap=false
+
 # Audio
 ro.config.media_vol_steps=20
 ro.config.vc_call_vol_steps=7
