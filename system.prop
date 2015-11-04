@@ -7,6 +7,7 @@ ro.hardware.alter=HiSilicon Kirin 620
 
 # ART
 dalvik.vm.dex2oat-swap=false
+ro.am.reschedule_service=true
 
 # Audio
 ro.config.media_vol_steps=20
