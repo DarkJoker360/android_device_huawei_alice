@@ -14,3 +14,5 @@ on property:sys.usb.config=hisi_debug,adb
     start adbd
     start usbshell
     setprop sys.usb.state $sys.usb.config
+
+    setprop sys.usb.ffs.aio_compat 1
