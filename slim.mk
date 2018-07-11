@@ -14,8 +14,8 @@
 
 $(call inherit-product, device/huawei/alice/full_alice.mk)
 
-# Inherit some common CM stuff.
-$(call inherit-product, vendor/cm/config/common_full_phone.mk)
+# Inherit some common SlimRoms stuff.
+$(call inherit-product, vendor/slim/config/common_full_phone.mk)
 
 # Boot animation
 TARGET_SCREEN_HEIGHT := 1280
@@ -24,7 +24,7 @@ TARGET_SCREEN_WIDTH := 720
 PRODUCT_SYSTEM_PROPERTY_BLACKLIST := ro.product.model
 PRODUCT_GMS_CLIENTID_BASE := android-huawei
 
-PRODUCT_NAME := lineage_alice
+PRODUCT_NAME := slim_alice
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
     BUILD_FINGERPRINT="Huawei/ALE-L21/hwALE-H:6.0/HuaweiALE-L21/C432B596:user/release-keys" \
