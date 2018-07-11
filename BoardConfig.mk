@@ -138,6 +138,7 @@ TARGET_RECOVERY_DEVICE_MODULES := libinit_hi6210sft
 TARGET_GLOBAL_CFLAGS += -DDISABLE_ASHMEM_TRACKING
 BOARD_RIL_CLASS := ../../../device/huawei/alice/ril
 PROTOBUF_SUPPORTED := true
+SIM_COUNT := 2
 
 # Optimizations 
 O3_OPTS := true
