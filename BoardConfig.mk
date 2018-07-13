@@ -82,6 +82,7 @@ BOARD_HEALTHD_CUSTOM_CHARGER_RES := $(DEVICE_PATH)/images
 # CMHW
 BOARD_HARDWARE_CLASS := \
     hardware/cyanogen/cmhw \
+    $(DEVICE_PATH)/cmhw
 
 ### FONTS
 EXTENDED_FONT_FOOTPRINT := true
