@@ -20,7 +20,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/locales_full.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_m.mk)
 
-CM_BUILDTYPE := OpenKirin
+CM_BUILDTYPE := SimoneEsposito(DarkJoker360)
 
 # Inherit from kiwi device
 $(call inherit-product, device/huawei/alice/device.mk)
