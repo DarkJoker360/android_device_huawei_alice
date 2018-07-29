@@ -1,0 +1,38 @@
+From b91cacf32a457165a13fd5a1b9ad1f9a0373ec16 Mon Sep 17 00:00:00 2001
+From: Meticulus <theonejohnnyd@gmail.com>
+Date: Tue, 31 Oct 2017 06:52:52 -0500
+Subject: [PATCH] "0001-bt-fix-bluetooth _______________________________
+
+*Previous From 8a4b912a5af499f6c733514dd917220bff819725 Mon Sep 17 00:00:00 2001
+*Previous From: Meticulus <theonejohnnyd@gmail.com>
+*Previous Date: Sat, 7 Jan 2017 09:40:46 -0600
+*Previous Subject: [PATCH] bt: fix bluetooth.
+*
+*-Don't ask me why this works, I have no idea but somehow blocking
+*opcode 0x40f fixes pairing.
+*
+*Change-Id: I4baa809355c388dddec1ceeda9df3e0d1ccec305"
+
+Change-Id: Id0252ebf5eaea00c69359f245282e30664f92ace
+---
+ hci/src/hci_layer.c | 4 ++++
+ 1 file changed, 4 insertions(+)
+
+diff --git a/hci/src/hci_layer.c b/hci/src/hci_layer.c
+index 10172d4..8f5b64e 100644
+--- a/hci/src/hci_layer.c
++++ b/hci/src/hci_layer.c
+@@ -419,6 +419,10 @@ static void transmit_command(
+ 
+   uint8_t *stream = command->data + command->offset;
+   STREAM_TO_UINT16(wait_entry->opcode, stream);
++  if(wait_entry->opcode == 0x40f) {
++	osi_free(wait_entry);
++	return;
++  }
+   wait_entry->complete_callback = complete_callback;
+   wait_entry->status_callback = status_callback;
+   wait_entry->command = command;
+-- 
+2.7.4
+

@@ -1,0 +1,37 @@
+From 7163df12b7c0754a87603852fa95e5ce27787442 Mon Sep 17 00:00:00 2001
+From: Meticulus <theonejohnnyd@gmail.com>
+Date: Mon, 6 Feb 2017 08:25:29 -0600
+Subject: [PATCH] 0001-telephony-fix-2g-2g-4g-switch
+
+Change-Id: I356c7a8f27c02f1fa395a2c2db1f1a7f56be8f5c
+---
+ src/java/com/android/internal/telephony/Phone.java | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+diff --git a/src/java/com/android/internal/telephony/Phone.java b/src/java/com/android/internal/telephony/Phone.java
+index e6168cd..dd94898 100644
+--- a/src/java/com/android/internal/telephony/Phone.java
++++ b/src/java/com/android/internal/telephony/Phone.java
+@@ -1851,7 +1851,7 @@ public abstract class Phone extends Handler implements PhoneInternalInterface {
+         // Only set preferred network types to that which the modem supports
+         int modemRaf = getRadioAccessFamily();
+         int rafFromType = RadioAccessFamily.getRafFromNetworkType(networkType);
+-
++/*
+         if (modemRaf == RadioAccessFamily.RAF_UNKNOWN
+                 || rafFromType == RadioAccessFamily.RAF_UNKNOWN) {
+             Rlog.d(LOG_TAG, "setPreferredNetworkType: Abort, unknown RAF: "
+@@ -1865,8 +1865,8 @@ public abstract class Phone extends Handler implements PhoneInternalInterface {
+             }
+             return;
+         }
+-
+-        int filteredRaf = (rafFromType & modemRaf);
++*/
++        int filteredRaf = (rafFromType);
+         int filteredType = RadioAccessFamily.getNetworkTypeFromRaf(filteredRaf);
+ 
+         Rlog.d(LOG_TAG, "setPreferredNetworkType: networkType = " + networkType
+-- 
+1.9.1
+
