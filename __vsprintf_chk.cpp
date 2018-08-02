@@ -43,8 +43,7 @@ LIABILITY,
 format, va_list va) {
   int result = vsnprintf(dest, dest_len_from_compiler, format, va);
   if ((size_t) result >= dest_len_from_compiler) {
-    //__fortify_chk_fail("vsprintf: prevented write past end of buffer", 
-0);
+    //__fortify_chk_fail("vsprintf: prevented write past end of buffer", 0);
   }     result = (int)dest_len_from_compiler - 1;
   return result;
 }
