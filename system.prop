@@ -29,10 +29,21 @@ wifi.interface=wlan0
 ro.am.reschedule_service=true
 ro.config.enable_rcc=true
 
-ro.hwui.texture_cache_size=72
+ro.hwui.r_buffer_cache_size=8
+debug.hwui.render_dirty_regions=false
+debug.sf.no_hw_vsync=1
+
+ro.config.mmu_en=1
+dalvik.vm.heapsize=512m
+ro.opengles.version=196609
+persist.fw.force_adoptable=true
+dalvik.vm.checkjni=false
+ro.bt.bdaddr_path=/data/misc/bluedroid/macbt
+ro.config.hw_navigationbar=true
+ro.hwui.texture_cache_size=48
 ro.hwui.texture_cache_flushrate=0.4
-ro.hwui.layer_cache_size=48
-ro.hwui.path_cache_size=32
+ro.hwui.layer_cache_size=32
+ro.hwui.path_cache_size=16
 ro.hwui.shape_cache_size=2
 ro.hwui.drop_shadow_cache_size=6
 ro.hwui.gradient_cache_size=1
@@ -41,8 +52,21 @@ ro.hwui.text_large_cache_width=2048
 ro.hwui.text_small_cache_height=1024
 ro.hwui.text_small_cache_width=1024
 ro.hwui.r_buffer_cache_size=8
+ro.hwui.fbo_cache_size=0
 debug.hwui.render_dirty_regions=false
-debug.sf.no_hw_vsync=1
+debug.hwui.enable_bp_cache=false
+ro.config.hw_music_lp=true
+ro.tui.service=true
+persist.media.offload.enable=true
+ro.config.hw_sensorhub=true
+ro.hwcamera.sm.video_size=640x480
+build.hisi_perf_opt=true
+ro.config.hw_perfhub=true
+ro.product.platform.pseudonym=1ARB9CV
+persist.sys.jankenable=true
+
+# Graphics
+ro.bq.gpu_to_cpu_unsupported=1
 
 # RIL
 ro.telephony.ril_class=HuaweiRIL
