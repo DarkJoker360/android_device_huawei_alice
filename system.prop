@@ -83,10 +83,4 @@ telephony.lteOnGsmDevice=1
 # Tethering
 persist.sys.usb.config.extra=none
 
-# Power HAL
-#
-persist.sys.stock_power_HAL=false
-#
-#
-#i
-persist.sys.strictmode.disable=true
+
