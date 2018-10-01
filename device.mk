@@ -119,10 +119,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     charger_res_images
 
-# Graphics
-PRODUCT_PACKAGES += \
-    hwcomposer.hi6210sft
-
 # Ramdisk
 PRODUCT_PACKAGES += \
     fstab.hi6210sft \
