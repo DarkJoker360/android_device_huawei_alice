@@ -1,13 +1,13 @@
 # LineageOS 14.1 for the Huawei P8 Lite (alice)
 
-### Sources
-# Kernel
+# Sources needed
+### Kernel
 This device tree is intended to be used with this kernel repo:
 
 See: https://github.com/DarkJoker360/android_kernel_huawei_alice
 
 branch: cm-14.1
-# Vendor
+### Vendor
 This device tree is intented to be used with this vendor repo
 
 https://github.com/DarkJoker360/android_vendor_huawei_alice
