@@ -85,7 +85,8 @@ NOTE: you have to run the chmod command if you have some issues on the script
 ```bash
 cd /home/$USER/los/device/huawei/alice/patches
 chmod a+x 'patches.sh'
-./patches.sh
+cd /home/$USER/los
+./device/huawei/alice/patches/patches.sh
 ```
 NOTE: If you are going to be offline while you are building, you will need download some prebuilts first.
 ```bash
