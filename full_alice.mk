@@ -20,9 +20,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/locales_full.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_m.mk)
 
-CM_BUILDTYPE := SimoneEsposito(DarkJoker360)
-
-# Inherit from kiwi device
+# Inherit from alice device
 $(call inherit-product, device/huawei/alice/device.mk)
 
 # Device identifier. This must come after all inclusions
