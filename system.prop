@@ -29,6 +29,9 @@ wifi.interface=wlan0
 ro.am.reschedule_service=true
 ro.config.enable_rcc=true
 
+# RIL 
+ro.huaweiril=true
+
 ro.hwui.r_buffer_cache_size=8
 debug.hwui.render_dirty_regions=false
 debug.sf.no_hw_vsync=1
