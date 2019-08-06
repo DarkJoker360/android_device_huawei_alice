@@ -86,4 +86,5 @@ telephony.lteOnGsmDevice=1
 # Tethering
 persist.sys.usb.config.extra=none
 
-
+# OTA
+cm.updater.uri=https://raw.githubusercontent.com/DarkJoker360/android_devices_OTA/Nougat/cm_alice.json
