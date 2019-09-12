@@ -50,7 +50,7 @@ PRODUCT_COPY_FILES += \
 
 # Hardware
 PRODUCT_PACKAGES += \
-    hwcomposer.hi6250 
+    hwcomposer.hi6210sft
 
 # Misc
 PRODUCT_COPY_FILES += \
