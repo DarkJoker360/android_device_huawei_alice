@@ -48,6 +48,10 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/prebuilts/gpsconfig.xml:system/etc/gpsconfig.xml \
     $(LOCAL_PATH)/prebuilts/gpsconfig_beta.xml:system/etc/gpsconfig_beta.xml
 
+# Hardware
+PRODUCT_PACKAGES += \
+    hwcomposer.hi6250 
+
 # Misc
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/prebuilts/device_monitor_for_nff.conf:system/etc/device_monitor_for_nff.conf \
