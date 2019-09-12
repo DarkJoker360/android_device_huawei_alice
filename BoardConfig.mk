@@ -130,6 +130,7 @@ COMMON_GLOBAL_CFLAGS += -DDISABLE_ASHMEM_TRACKING
 BOARD_RIL_CLASS := ../../../device/huawei/alice/ril
 PROTOBUF_SUPPORTED := true
 TARGET_RIL_VARIANT := proprietary
+SIM_COUNT := 2
 
 # Enable WEBGL
 ENABLE_WEBGL := true
