@@ -16,6 +16,10 @@
 
 $(call inherit-product-if-exists, vendor/huawei/alice/alice-vendor.mk)
 
+# APN
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/prebuilts/apns-conf.xml:system/etc/apns-conf.xml
+
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay \
