@@ -18,7 +18,7 @@ branch: lineage-15.1
 
 ### Step 1: Setting up the Build Environment.
 
-You'll need Linux to be able to build LineageOS 14.1. You have three choices here; you can:
+You'll need Linux to be able to build LineageOS 15.1. You have three choices here; you can:
 
 1. Install Linux natively on your computer.
 2. Dual boot Linux and Windows.
@@ -29,11 +29,6 @@ NOTE: I recommend you use Ubuntu 14.04 LTS to build. That's what I use.
 Now read this: http://source.android.com/source/initializing.html
 
 NOTE: When I say "read", I mean read and comprehend.
-
-In addition to Android's build prerequisites LineageOS 14.1 requires "maven"
-```bash
-sudo apt-get install maven2
-```
 
 ### Step 2: Downloading the Source.
 
@@ -46,7 +41,7 @@ Execute the following commands in a linux terminal:
 ```bash
 mkdir /home/$USER/los
 cd /home/$USER/los
-repo init -u git://github.com/LineageOS/android.git -b lineage
+repo init -u git://github.com/LineageOS/android.git -b lineage-15.1
 repo sync
 ```
 WARNING: There may be times, towards the end when it seem like, the download is stuck and not making any progress because there are no updates on the screen. BE PATIENT!, open a 
