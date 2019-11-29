@@ -1,4 +1,4 @@
-# LineageOS 14.1 for the Huawei P8 Lite (alice)
+# LineageOS 15.1 for the Huawei P8 Lite (alice)
 
 # Sources needed
 ### Kernel
@@ -6,13 +6,13 @@ This device tree is intended to be used with this kernel repo:
 
 See: https://github.com/DarkJoker360/android_kernel_huawei_alice
 
-branch: cm-14.1
+branch: lineage-15.1
 ### Vendor
 This device tree is intented to be used with this vendor repo
 
 https://github.com/DarkJoker360/android_vendor_huawei_alice
 
-branch: cm-14.1
+branch: lineage-15.1
 
 # How To Build
 
@@ -46,7 +46,7 @@ Execute the following commands in a linux terminal:
 ```bash
 mkdir /home/$USER/los
 cd /home/$USER/los
-repo init -u git://github.com/LineageOS/android.git -b cm-14.1
+repo init -u git://github.com/LineageOS/android.git -b lineage
 repo sync
 ```
 WARNING: There may be times, towards the end when it seem like, the download is stuck and not making any progress because there are no updates on the screen. BE PATIENT!, open a 
@@ -65,9 +65,9 @@ Copy the following into alice.xml, save and close.
 ```bash
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
-  <project name="DarkJoker360/android_kernel_huawei_alice" path="kernel/huawei/alice" remote="github" revision="cm-14.1"/>
-  <project name="DarkJoker360/android_device_huawei_alice" path="device/huawei/alice" remote="github" revision="cm-14.1"/>
-  <project name="DarkJoker360/android_vendor_huawei_alice" path="vendor/huawei/alice" remote="github" revision="cm-14.1"/>
+  <project name="DarkJoker360/android_kernel_huawei_alice" path="kernel/huawei/alice" remote="github" revision="lineage-15.1"/>
+  <project name="DarkJoker360/android_device_huawei_alice" path="device/huawei/alice" remote="github" revision="lineage-15.1"/>
+  <project name="DarkJoker360/android_vendor_huawei_alice" path="vendor/huawei/alice" remote="github" revision="lineage-15.1"/>
 </manifest>
 ```
 
