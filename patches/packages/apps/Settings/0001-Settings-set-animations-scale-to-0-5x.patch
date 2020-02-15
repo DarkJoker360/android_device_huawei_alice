@@ -1,0 +1,23 @@
+From fa0030e9ef8cf83a4298315d7b1d8f9762f2eb96 Mon Sep 17 00:00:00 2001
+From: DarkJoker360 <simoespo159@gmail.com>
+Date: Sat, 15 Feb 2020 16:02:17 +0100
+Subject: [PATCH] Settings: set animations scale to 0,5x
+
+Signed-off-by: DarkJoker360 <simoespo159@gmail.com>
+
+diff --git a/src/com/android/settings/DevelopmentSettings.java b/src/com/android/settings/DevelopmentSettings.java
+index fc8ec91a95..78a8fc7436 100644
+--- a/src/com/android/settings/DevelopmentSettings.java
++++ b/src/com/android/settings/DevelopmentSettings.java
+@@ -1928,7 +1928,7 @@ public class DevelopmentSettings extends RestrictedSettingsFragment
+ 
+     private void writeAnimationScaleOption(int which, ListPreference pref, Object newValue) {
+         try {
+-            float scale = newValue != null ? Float.parseFloat(newValue.toString()) : 1;
++            float scale = newValue != null ? Float.parseFloat(newValue.toString()) : (float)0.5;
+             mWindowManager.setAnimationScale(which, scale);
+             updateAnimationScaleValue(which, pref);
+         } catch (RemoteException e) {
+-- 
+2.20.1.windows.1
+
