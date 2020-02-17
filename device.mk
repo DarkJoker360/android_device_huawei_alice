@@ -16,6 +16,9 @@
 
 $(call inherit-product-if-exists, vendor/huawei/alice/alice-vendor.mk)
 
+# Android GO configurations
+$(call inherit-product, build/target/product/go_defaults.mk)
+
 # APN
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/prebuilts/apns-conf.xml:system/etc/apns-conf.xml
