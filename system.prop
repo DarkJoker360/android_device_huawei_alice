@@ -5,6 +5,9 @@ ro.config.ipv4.mtu=1400
 net.tethering.noprovisioning=true
 ro.hardware.alter=HiSilicon Kirin 620
 
+# Audio
+ro.config.vc_call_vol_steps=7
+
 # Camera
 camera2.portability.force_api=1
 ro.camera.beauty.algo.doc=1
