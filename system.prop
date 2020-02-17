@@ -34,6 +34,7 @@ ro.config.hw_lte_support=true
 ro.config.hw_show_4G_Plus_icon=true
 ro.config.hw_show_network_icon=true
 ro.telephony.ril.config=simactivation,simactivation
+ro.huaweiril=true
 
 # Tethering
 persist.sys.usb.config.extra=none
