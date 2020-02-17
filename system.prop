@@ -6,6 +6,7 @@ net.tethering.noprovisioning=true
 ro.hardware.alter=HiSilicon Kirin 620
 
 # Audio
+ro.config.media_vol_steps=20
 ro.config.vc_call_vol_steps=7
 
 # Camera
