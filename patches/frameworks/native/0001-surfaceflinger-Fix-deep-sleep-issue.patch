@@ -1,0 +1,40 @@
+From 2b5fe589a7cc2223a344e56d84e450041756656a Mon Sep 17 00:00:00 2001
+From: Eduardo Alonso <edu@error404software.com>
+Date: Tue, 15 Nov 2016 21:58:07 +0100
+Subject: [PATCH] surfaceflinger: Fix deep sleep issue
+
+* The problem is that after unplugging the phone from the USB port, the screen no longer turns on. This is caused because the FB is set to sleep, and no one wakes it up whenever the power button is pressed, thats why we are going to do so manually.
+---
+ services/surfaceflinger/SurfaceFlinger_hwc1.cpp | 12 ++++++++++++
+ 1 file changed, 12 insertions(+)
+
+diff --git a/services/surfaceflinger/SurfaceFlinger_hwc1.cpp b/services/surfaceflinger/SurfaceFlinger_hwc1.cpp
+index 7f3b269f0..28452ab83 100644
+--- a/services/surfaceflinger/SurfaceFlinger_hwc1.cpp
++++ b/services/surfaceflinger/SurfaceFlinger_hwc1.cpp
+@@ -82,6 +82,9 @@
+ 
+ #define DISPLAY_COUNT       1
+ 
++#define FBIOBLANK               0x4611
++#define FB_BLANK_UNBLANK        0
++
+ /*
+  * DEBUG_SCREENSHOTS: set to true to check that screenshots are not all
+  * black pixels.
+@@ -2491,6 +2494,15 @@ void SurfaceFlinger::setPowerModeInternal(const sp<DisplayDevice>& hw,
+         int mode) {
+     ALOGD("Set power mode=%d, type=%d flinger=%p", mode, hw->getDisplayType(),
+             this);
++	if (mode == 2)//Awaking the lcd
++	{
++		int fd, ret;
++		fd = open("/dev/graphics/fb0",O_WRONLY);
++		ret = ioctl(fd, FBIOBLANK, FB_BLANK_UNBLANK);
++
++		if (ret < 0)
++			ALOGE("Error waking up LCD: %d (%s)\n", ret, strerror(errno));
++	}
+     int32_t type = hw->getDisplayType();
+     int currentMode = hw->getPowerMode();
+ 
