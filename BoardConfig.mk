@@ -36,8 +36,6 @@ TARGET_SUPPORTS_64_BIT_APPS := true
 TARGET_BOARD_PLATFORM := hi6210sft
 BOARD_VENDOR_PLATFORM := hi6210sft
 
-WITH_DEXPREOPT := true
-
 # Assert
 TARGET_OTA_ASSERT_DEVICE := hi6210sft,alice
 
@@ -89,7 +87,7 @@ ifeq ($(HOST_OS),linux)
   ifneq ($(TARGET_BUILD_VARIANT),eng)
     ifeq ($(WITH_DEXPREOPT),)
       WITH_DEXPREOPT := true
-      WITH_DEXPREOPT_BOOT_IMG_AND_SYSTEM_SERVER_ONLY := true
+      WITH_DEXPREOPT_PIC := true
     endif
   endif
 endif
