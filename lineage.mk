@@ -32,3 +32,7 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
     TARGET_DEVICE=hi6210sft
 
 BUILD_FINGERPRINT := Huawei/ALE-L21/hwALE-H:6.0/HuaweiALE-L21/C432B596:user/release-keys
+
+# Vendor security patch level
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.lineage.build.vendor_security_patch=2018-05-05
