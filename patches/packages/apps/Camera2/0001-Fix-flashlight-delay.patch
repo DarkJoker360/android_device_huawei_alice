@@ -1,0 +1,65 @@
+From fffac475f78a7bf166520ef25941d61b890d168d Mon Sep 17 00:00:00 2001
+From: Meticulus <theonejohnnyd@gmail.com>
+Date: Sat, 2 Feb 2019 18:30:32 +0000
+Subject: [PATCH] Fix flashlight delay
+
+Change-Id: I900c5d1042a5fb092ba0dbc6f2c420013f46dea8
+---
+ src/com/android/camera/one/v2/SimpleOneCameraFactory.java    | 2 +-
+ src/com/android/camera/one/v2/photo/PictureTakerFactory.java | 9 +++++----
+ 2 files changed, 6 insertions(+), 5 deletions(-)
+
+diff --git a/src/com/android/camera/one/v2/SimpleOneCameraFactory.java b/src/com/android/camera/one/v2/SimpleOneCameraFactory.java
+index 59d94cf..da654c7 100644
+--- a/src/com/android/camera/one/v2/SimpleOneCameraFactory.java
++++ b/src/com/android/camera/one/v2/SimpleOneCameraFactory.java
+@@ -214,7 +214,7 @@ public class SimpleOneCameraFactory implements OneCameraFactory {
+                     pictureTaker = PictureTakerFactory.create(Loggers.tagFactory(), mainExecutor,
+                             cameraCommandExecutor, imageSaverBuilder,
+                             frameServerComponent.provideFrameServer(),
+-                            meteredZoomedRequestBuilder, managedImageReader, flashSetting)
++                            meteredZoomedRequestBuilder, managedImageReader, flashSetting, characteristics.getCameraDirection())
+                             .providePictureTaker();
+                 }
+ 
+diff --git a/src/com/android/camera/one/v2/photo/PictureTakerFactory.java b/src/com/android/camera/one/v2/photo/PictureTakerFactory.java
+index cf585f3..7f31073 100644
+--- a/src/com/android/camera/one/v2/photo/PictureTakerFactory.java
++++ b/src/com/android/camera/one/v2/photo/PictureTakerFactory.java
+@@ -43,20 +43,21 @@ public final class PictureTakerFactory {
+             FrameServer frameServer,
+             RequestBuilder.Factory rootRequestBuilder,
+             ManagedImageReader sharedImageReader,
+-            Supplier<OneCamera.PhotoCaptureParameters.Flash> flashMode) {
++            Supplier<OneCamera.PhotoCaptureParameters.Flash> flashMode,
++	    OneCamera.Facing direction) {
+         // When flash is ON, always use the ConvergedImageCaptureCommand which
+         // performs the AF & AE precapture sequence.
+         ImageCaptureCommand flashOnCommand = new ConvergedImageCaptureCommand(
+                 sharedImageReader, frameServer, rootRequestBuilder,
+                 CameraDevice.TEMPLATE_ZERO_SHUTTER_LAG, CameraDevice.TEMPLATE_ZERO_SHUTTER_LAG,
+-                Arrays.asList(rootRequestBuilder), true /* ae */, true /* af */);
++                Arrays.asList(rootRequestBuilder), true /* ae */, direction == OneCamera.Facing.BACK ? true : false /* af */);
+ 
+         // When flash is OFF, wait for AF convergence, but not AE convergence
+         // (which can be very slow).
+         ImageCaptureCommand flashOffCommand = new ConvergedImageCaptureCommand(
+                 sharedImageReader, frameServer, rootRequestBuilder,
+                 CameraDevice.TEMPLATE_ZERO_SHUTTER_LAG, CameraDevice.TEMPLATE_ZERO_SHUTTER_LAG,
+-                Arrays.asList(rootRequestBuilder), false /* ae */, true /* af */);
++                Arrays.asList(rootRequestBuilder), false /* ae */, direction == OneCamera.Facing.BACK ? true : false /* af */);
+ 
+         // When flash is AUTO, wait for AF & AE.
+         // TODO OPTIMIZE If the last converged-AE state indicates that flash is
+@@ -64,7 +65,7 @@ public final class PictureTakerFactory {
+         ImageCaptureCommand flashAutoCommand = new ConvergedImageCaptureCommand(
+                 sharedImageReader, frameServer, rootRequestBuilder,
+                 CameraDevice.TEMPLATE_ZERO_SHUTTER_LAG, CameraDevice.TEMPLATE_ZERO_SHUTTER_LAG,
+-                Arrays.asList(rootRequestBuilder), true /* ae */, true /* af */);
++                Arrays.asList(rootRequestBuilder), true /* ae */, direction == OneCamera.Facing.BACK ? true : false /* af */);
+ 
+         ImageCaptureCommand flashBasedCommand = new FlashBasedPhotoCommand(logFactory, flashMode,
+                 flashOnCommand, flashAutoCommand, flashOffCommand);
+-- 
+2.7.4
+
