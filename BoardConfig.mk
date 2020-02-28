@@ -95,6 +95,9 @@ endif
 # Extended Filesystem Support
 TARGET_EXFAT_DRIVER := exfat
 
+# HIDL
+DEVICE_MANIFEST_FILE := $(LOCAL_PATH)/manifest.xml
+
 # Kernel
 BOARD_KERNEL_BASE := 0x07478000
 BOARD_KERNEL_PAGESIZE := 2048
