@@ -25,9 +25,6 @@ DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay \
     $(LOCAL_PATH)/overlay-lineage
 
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/prebuilts/manifest.xml:$(TARGET_COPY_OUT_VENDOR)/manifest.xml
-
 # Media configuration
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/prebuilts/media_codecs.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs.xml \
