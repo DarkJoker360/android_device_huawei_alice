@@ -1,1 +1,3 @@
+add_lunch_combo lineage_alice-eng
+add_lunch_combo lineage_alice-user
 add_lunch_combo lineage_alice-userdebug
