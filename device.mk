@@ -116,10 +116,6 @@ PRODUCT_PACKAGES += \
     cyttsp5_mt.kl \
     usbaudio.kl
 
-# Charger
-PRODUCT_PACKAGES += \
-    charger_res_images
-
 # Graphics
 PRODUCT_PACKAGES += \
     hwcomposer.hi6210sft
