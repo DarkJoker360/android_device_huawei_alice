@@ -20,7 +20,6 @@ ro.hwcamera.use.videosize.1080p=true
 ro.hwcamera.previeweffects=true
 ro.camera.config.burstcount=10
 persist.camera.cpp.duplication=false
-camera.hal1.packagelist=com.google.android.GoogleCamera
 
 # Connectivity
 ro.connectivity.sta_p2p_coex=false
