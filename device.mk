@@ -145,8 +145,6 @@ PRODUCT_PACKAGES += \
 
 # Camera props
 PRODUCT_PROPERTY_OVERRIDES += \
-    media.stagefright.legacyencoder=true \
-    media.stagefright.less-secure=true \
     camera.disable_treble=1
 
 # Default OMX service to non-Treble
