@@ -121,6 +121,9 @@ BOARD_KERNEL_IMAGE_NAME := Image
 TARGET_KERNEL_SOURCE := kernel/huawei/alice
 TARGET_KERNEL_CONFIG := alice_defconfig
 
+# HIDL
+DEVICE_MANIFEST_FILE := $(LOCAL_PATH)/manifest.xml
+
 # Lights
 TARGET_PROVIDES_LIBLIGHT := true
 

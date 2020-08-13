@@ -48,6 +48,14 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/prebuilts/gpsconfig.xml:system/etc/gpsconfig.xml \
     $(LOCAL_PATH)/prebuilts/gpsconfig_beta.xml:system/etc/gpsconfig_beta.xml
 
+# Gralloc
+PRODUCT_PACKAGES += \
+    android.hardware.graphics.allocator@2.0-impl \
+    android.hardware.graphics.allocator@2.0-service \
+    android.hardware.memtrack@1.0-impl \
+    android.hardware.memtrack@1.0-service \
+    android.hardware.graphics.mapper@2.0-impl   
+
 # OMX
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/prebuilts/hisi_omx.cfg:system/etc/hisi_omx.cfg
