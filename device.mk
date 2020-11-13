@@ -64,6 +64,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     android.hardware.light@2.0-service.hisi
 
+# MAC Loader
+PRODUCT_PACKAGES += \
+    mac_nvme
+
 # Thermal engine
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/prebuilts/thermald.xml:system/etc/thermald.xml \

@@ -1,0 +1,10 @@
+on post-fs
+    setprop ro.bt.bdaddr_path "/data/misc/bluedroid/macbt"
+    mkdir /data/misc/bluedroid 0770 bluetooth bluetooth
+    start mac_nvme
+
+service mac_nvme /system/vendor/bin/hw/mac_nvme
+    user root
+    group bluetooth system wifi
+    oneshot
+    disabled
