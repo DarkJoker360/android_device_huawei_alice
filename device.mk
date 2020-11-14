@@ -64,6 +64,10 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/prebuilts/hisi_cfg_alice.ini:system/etc/hisi_cfg_alice.ini \
     $(LOCAL_PATH)/prebuilts/hisi_cfg_cherry.ini:system/etc/hisi_cfg_cherry.ini
 
+# Lights
+PRODUCT_PACKAGES += \
+    android.hardware.light@2.0-service.hisi
+
 # Thermal engine
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/prebuilts/thermald.xml:system/etc/thermald.xml \
