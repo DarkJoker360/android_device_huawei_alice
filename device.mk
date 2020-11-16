@@ -16,6 +16,16 @@
 
 $(call inherit-product-if-exists, vendor/huawei/alice/alice-vendor.mk)
 
+# Kernel
+ifeq ($(TARGET_PREBUILT_KERNEL),)
+LOCAL_KERNEL := device/huawei/alice/Image.gz
+else
+LOCAL_KERNEL := $(TARGET_PREBUILT_KERNEL)
+endif
+
+PRODUCT_COPY_FILES += \
+    $(LOCAL_KERNEL):kernel
+
 # Android GO configurations
 $(call inherit-product, build/target/product/go_defaults.mk)
 
