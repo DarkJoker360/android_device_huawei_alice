@@ -733,12 +733,10 @@ service ril-daemon /system/vendor/bin/hw/rild
     class late_start
     socket rild stream 660 root radio
     socket rildm2 stream 660 root radio
-    socket rildm3 stream 660 root radio
     socket rildi stream 660 root radio
     socket rildi2 stream 660 root radio
     socket rildc1 stream 660 radio system
     socket rildc2 stream 660 radio system
-    socket rildc3 stream 660 radio system
     
     socket rild-debug stream 660 radio system
     user radio
