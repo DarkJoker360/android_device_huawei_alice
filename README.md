@@ -81,8 +81,6 @@ Now you will want to apply the repo patches. These patches modify code in the RO
 Execute the following commands in a linux terminal:
 NOTE: you have to run the chmod command if you have some issues on the script 
 ```bash
-cd /home/$USER/los/device/huawei/alice/patches
-chmod a+x 'patches.sh'
 cd /home/$USER/los
 ./device/huawei/alice/patches/patches.sh
 ```
