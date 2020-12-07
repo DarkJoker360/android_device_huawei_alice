@@ -166,13 +166,13 @@
         <version>1.0</version>
         <interface>
             <name>IRadio</name>
-            <instance>rilc</instance>
-            <instance>rilc2</instance>
+            <instance>rild</instance>
+            <instance>rild-ims</instance>
+            <instance>rildm2</instance>
             <instance>rildi</instance>
             <instance>rildi2</instance>
-            <instance>slot1</instance>
-            <instance>slot2</instance>
-            <instance>slot3</instance>
+            <instance>rildc1</instance>
+            <instance>rildc2</instance>
         </interface>
     </hal>
     <hal format="hidl">
@@ -181,13 +181,13 @@
         <version>1.0</version>
         <interface>
             <name>IOemHook</name>
-            <instance>rilc</instance>
-            <instance>rilc2</instance>
+            <instance>rild</instance>
+            <instance>rild-ims</instance>
+            <instance>rildm2</instance>
             <instance>rildi</instance>
             <instance>rildi2</instance>
-            <instance>slot1</instance>
-            <instance>slot2</instance>
-            <instance>slot3</instance>
+            <instance>rildc1</instance>
+            <instance>rildc2</instance>
         </interface>
     </hal>
     <hal format="hidl">
@@ -196,13 +196,13 @@
         <version>1.0</version>
         <interface>
             <name>IRadio</name>
-            <instance>rilc</instance>
-            <instance>rilc2</instance>
+            <instance>rild</instance>
+            <instance>rild-ims</instance>
+            <instance>rildm2</instance>
             <instance>rildi</instance>
             <instance>rildi2</instance>
-            <instance>slot1</instance>
-            <instance>slot2</instance>
-            <instance>slot3</instance>
+            <instance>rildc1</instance>
+            <instance>rildc2</instance>
         </interface>
     </hal>
     <hal format="hidl">
