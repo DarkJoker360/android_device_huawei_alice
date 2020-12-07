@@ -14,7 +14,7 @@
 # limitations under the License.
 #
 
-$(call inherit-product-if-exists, vendor/huawei/alice/alice-vendor.mk)
+$(call inherit-product, vendor/huawei/alice/alice-vendor.mk)
 
 # Android GO configurations
 $(call inherit-product, build/target/product/go_defaults.mk)
