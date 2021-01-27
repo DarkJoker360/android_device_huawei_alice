@@ -25,25 +25,34 @@ fi
 THIS_DIR="$PWD/device/huawei/alice/patches"
 
 echo "Patching sources..."
-cd frameworks/base
-patch -p1 < $THIS_DIR/frameworks/base/0001-Disable-vendor-mismatch-warning.patch
-cd ../native
-patch -p1 < $THIS_DIR/frameworks/native/0001-surfaceflinger-Fix-deep-sleep-issue.patch
-cd ../opt/telephony
-patch -p1 < $THIS_DIR/frameworks/opt/telephony/0001-telephony-fix-2g-2g-4g-switch.patch
-patch -p1 < $THIS_DIR/frameworks/opt/telephony/0002-Telephony-Don-not-call-onUssdRelease-for-Huawei-RIL.patch
-patch -p1 < $THIS_DIR/frameworks/opt/telephony/0003-Make-better-signal-levels-on-Huawei-devices.patch
-cd $PWD
-cd packages/apps/Camera2
-#patch -p1 < $THIS_DIR/packages/apps/Camera2/0001-Fix-flashlight-delay.patch
-cd ../../services/Telephony
-patch -p1 < $THIS_DIR/packages/services/Telephony/0001-Telephony-Support-muting-by-RIL-command.patch
-cd $PWD
+(
+    cd frameworks/base; 
+    patch -p1 < $THIS_DIR/frameworks/base/0001-Disable-vendor-mismatch-warning.patch
+)
+(
+    cd frameworks/native; 
+    patch -p1 < $THIS_DIR/frameworks/native/0001-surfaceflinger-Fix-deep-sleep-issue.patch
+)
+(
+    cd frameworks/opt/telephony; 
+    patch -p1 < $THIS_DIR/frameworks/opt/telephony/0001-telephony-fix-2g-2g-4g-switch.patch
+    patch -p1 < $THIS_DIR/frameworks/opt/telephony/0002-Telephony-Don-not-call-onUssdRelease-for-Huawei-RIL.patch
+    patch -p1 < $THIS_DIR/frameworks/opt/telephony/0003-Make-better-signal-levels-on-Huawei-devices.patch
+)
+(
+    cd packages/apps/Camera2
+    patch -p1 < $THIS_DIR/packages/apps/Camera2/0001-Fix-flashlight-delay.patch
+)
+(
+    cd packages/services/Telephony
+    patch -p1 < $THIS_DIR/packages/services/Telephony/0001-Telephony-Support-muting-by-RIL-command.patch
+)
+(
+    cd vendor/lineage
+    git fetch https://github.com/DarkJoker360/android_vendor_lineage
+    git cherry-pick ffaaece5655263f5db69e65e68bed9d3bbca546e
+)
 
-cd vendor/lineage
-git fetch https://github.com/DarkJoker360/android_vendor_lineage
-git cherry-pick ffaaece5655263f5db69e65e68bed9d3bbca546e
-cd ../..
 
 rm -rf system/core/init
 git clone https://github.com/DarkJoker360/alice_system_core_init system/core/init
