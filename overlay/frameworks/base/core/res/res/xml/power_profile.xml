@@ -19,27 +19,23 @@
 <device name="Android">
   <!-- All values are in mA except as noted -->
   <item name="none">0</item>
-  <item name="screen.on">114</item> <!-- min brite -->
-  <item name="bluetooth.active">97</item>
-  <item name="bluetooth.on">0.6</item>
-  <item name="bluetooth.at">0.6</item> <!-- TBD -->
-  <item name="screen.full">340</item> <!-- backlight 16 leds -->
+  <item name="screen.on">139</item>
+  <item name="bluetooth.active">116</item>
+  <item name="bluetooth.on">2.8</item>
+  <item name="bluetooth.at">2.8</item>
+  <item name="screen.full">380</item>
   <item name="wifi.on">0.6</item>
-  <item name="wifi.active">128</item>
-  <item name="wifi.scan">146</item>
-  <item name="dsp.audio">43</item> <!-- k3v5 -->
-  <item name="dsp.video">176</item>
+  <item name="wifi.active">97</item>
+  <item name="wifi.scan">100</item>
+  <item name="dsp.audio">60</item>
+  <item name="dsp.video">122</item>
   <item name="radio.active">190</item>
-  <item name="gps.on">70</item>
-  <item name="battery.capacity">2900</item> <!-- 3900mAh -->
-  <item name="radio.scanning">65</item> <!-- TBD -->
-  <!-- Current consumed by the radio at different signal strengths, when paging  -->
-  <array name="radio.on"> <!-- 1 entry per signal strength bin, TBD -->
-    <value>13.0</value>
-    <value>10.0</value>
-    <value>10.0</value>
-    <value>10.0</value>
-    <value>10.0</value>
+  <item name="gps.on">1.6</item>
+  <item name="battery.capacity">2200</item>
+  <item name="radio.scanning">302</item>
+  <array name="radio.on">
+    <value>65</value>
+    <value>10</value>
   </array>
   <array name="cpu.speeds">
     <value>208000</value> <!-- 200 MHz CPU speed -->
@@ -49,9 +45,9 @@
     <value>1200000</value><!-- 1.2 GHz CPU speed -->
   </array>
   <!-- Power consumption in suspend -->
-  <item name="cpu.idle">4</item> <!-- k3v5 -->
+  <item name="cpu.idle">3</item>
   <!-- Power consumption due to wake lock held -->
-  <item name="cpu.awake">43</item> <!-- k3v5 -->
+  <item name="cpu.awake">50</item>
   <!-- Power consumption at different speeds -->
   <array name="cpu.active">
     <value>107</value>
@@ -60,6 +56,4 @@
     <value>582</value>
     <value>899</value>
   </array>
-  <allow-in-power-save package="com.google.android.gms" />
-  <allow-in-data-usage-save package="com.google.android.gms" />
 </device>
