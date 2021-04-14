@@ -14,6 +14,13 @@ https://github.com/DarkJoker360/android_vendor_huawei_alice
 
 branch: lineage-15.1
 
+### Patcher
+This device tree is intented to be used with this patcher tool
+
+https://github.com/DarkJoker360/alice_patcher
+
+branch: lineage-15.1
+
 # How To Build
 
 ### Step 1: Setting up the Build Environment.
@@ -81,8 +88,8 @@ Now you will want to apply the repo patches. These patches modify code in the RO
 Execute the following commands in a linux terminal:
 NOTE: you have to run the chmod command if you have some issues on the script 
 ```bash
-cd /home/$USER/los
-./device/huawei/alice/patches/patches.sh
+cd /home/$USER/los/
+./alice_patcher/patches.sh
 ```
 NOTE: If you are going to be offline while you are building, you will need download some prebuilts first.
 ```bash
