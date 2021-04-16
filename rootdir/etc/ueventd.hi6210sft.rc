@@ -31,7 +31,7 @@ subsystem graphics_compose
 /dev/chrKmsgWifi	  0660 system system
 /dev/chrKmsgBFG		  0660 system system
 /dev/chrAppWifi		  0660 wifi wifi
-/dev/chrAppBt		  0664 bluetooth bluetooth
+/dev/chrAppBt		  0660 bluetooth bluetooth
 /dev/chrAppGnss		  0660 system system
 
 /dev/appvcom		  0660 radio radio
