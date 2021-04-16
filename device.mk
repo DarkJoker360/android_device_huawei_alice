@@ -157,11 +157,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.usb@1.0-service
 
-# Lights
-PRODUCT_PACKAGES += \
-    android.hardware.light@2.0-impl \
-    android.hardware.light@2.0-service
-
 # Netutils
 PRODUCT_PACKAGES += \
     netutils-wrapper-1.0 \
