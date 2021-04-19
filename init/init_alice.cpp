@@ -59,36 +59,18 @@ void init_target_properties()
 
     std::string platform = property_get("ro.board.platform");
     if (platform != ANDROID_TARGET) {
-	return;
+        return;
     }
 
-    fin.open("/sys/firmware/devicetree/base/hisi,product_name");
-    while (std::getline(fin, buf, ' '))
-        if ((buf.find("ALICE_TLO2") != std::string::npos) || (buf.find("ALICE_TL21") != std::string::npos) || (buf.find("ALICE_TL23") != std::string::npos) || (buf.find("CHM-U01") != std::string::npos) || (buf.find("CHM-U03") != std::string::npos) || (buf.find("CARMEL_L21") != std::string::npos))
-            break;
+    fin.open("/sys/firmware/devicetree/base/boardinfo/normal_product_name");
+    if (!fin) {
+    	property_set("ro.product.model", "ALICE");
+    } else {
+        std::string model;
+        fin >> model;
+        property_set("ro.product.model", model.data());
+    }
     fin.close();
-
-    if (buf.find("ALICE_TLO2") != std::string::npos) {
-        property_set("ro.product.model", "ALE-L02");
-    }
-    else if (buf.find("ALICE_TL21") != std::string::npos) {
-        property_set("ro.product.model", "ALE-L21");
-    }
-    else if (buf.find("ALICE_TL23") != std::string::npos) {
-        property_set("ro.product.model", "ALE-L23");
-    }
-    else if (buf.find("CHM-U01") != std::string::npos) {
-        property_set("ro.product.model", "CHM-U01");
-    }
-    else if (buf.find("CHM-U03") != std::string::npos) {
-        property_set("ro.product.model", "CHM-U03");
-    }
-    else if (buf.find("CARMEL_L21") != std::string::npos) {
-        property_set("ro.product.model", "CAM-L21");
-    }
-    else {
-	property_set("ro.product.model", "ALICE");
-    }
 
     fin.open("/proc/cmdline");
     while (std::getline(fin, buf, ' '))
