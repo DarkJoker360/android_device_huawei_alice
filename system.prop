@@ -42,6 +42,7 @@ ro.config.hw_show_network_icon=true
 ro.telephony.ril.config=simactivation,simactivation
 ro.huaweiril=true
 persist.sys.signal.level=openkirin
+ro.build.version.emui=EmotionUI_4.1
 
 # Tethering
 persist.sys.usb.config.extra=none
