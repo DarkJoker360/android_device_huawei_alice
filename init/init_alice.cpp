@@ -28,6 +28,7 @@
 #include <cstdlib>
 #include <unistd.h>
 #include <fcntl.h>
+#include <fstream>
 #define _REALLY_INCLUDE_SYS__SYSTEM_PROPERTIES_H_
 #include <sys/_system_properties.h>
 
@@ -46,26 +47,39 @@ void property_override(char const prop[], char const value[])
 }
 
 void vendor_load_properties() {
-        property_override("ro.product.model", "ALE-L21");
-        property_override("ro.build.description", "ALE-L21-user 6.0 HuaweiALE-L21 C432B596 release-keys");
-        property_override("ro.build.fingerprint", "Huawei/ALE-L21/hwALE-H:6.0/HuaweiALE-L21/C432B596:user/release-keys");
 
-        property_override("rild.libargs", "-m modem0");
-        property_override("rild.libargs1", "-m modem1");
-        property_override("rild.libpath", "/vendor/lib64/libbalong-ril.so");
-        property_override("rild.libpath1", "/vendor/lib64/libbalong-ril.so");
-        property_override("ro.config.dsds_mode", "umts_gsm");
-        property_override("ro.config.hw_dsda", "true");
-        property_override("ro.multi.rild", "true");
-        property_override("persist.dsds.enabled", "true");
-        property_override("rild.rild1_ready_to_start", "true");
-        property_override("persist.radio.multisim.config", "dsda");
-        property_override("ro.config.is_start_commril", "true");
-        property_override("ro.config.default_commril_mode", "HISI_CGUL_MODE");
-        property_override("ro.config.fix_commril_mode", "false");
-        property_override("ro.telephony.default_network", "9");
-        property_override("gsm.defaultpdpcontext.active", "true");
-        property_override("persist.radio.m0_ps_allow", "1");
-	property_override("persist.radio.modem_cdma_roam", "false");
-	property_override("ro.config.full_network_support", "false");
+    std::ifstream fin;
+    std::string modem;
+
+    fin.open("/sys/firmware/devicetree/base/boardinfo/normal_product_name");
+    if (!fin) {
+    	property_override("ro.product.model", "ALICE");
+    } else {
+        std::string model;
+        fin >> model;
+        property_override("ro.product.model", model.data());
+    }
+    fin.close();
+
+    property_override("ro.build.description", "ALE-L21-user 6.0 HuaweiALE-L21 C432B596 release-keys");
+    property_override("ro.build.fingerprint", "Huawei/ALE-L21/hwALE-H:6.0/HuaweiALE-L21/C432B596:user/release-keys");
+
+    property_override("rild.libargs", "-m modem0");
+    property_override("rild.libargs1", "-m modem1");
+    property_override("rild.libpath", "/vendor/lib64/libbalong-ril.so");
+    property_override("rild.libpath1", "/vendor/lib64/libbalong-ril.so");
+    property_override("ro.config.dsds_mode", "umts_gsm");
+    property_override("ro.config.hw_dsda", "true");
+    property_override("ro.multi.rild", "true");
+    property_override("persist.dsds.enabled", "true");
+    property_override("rild.rild1_ready_to_start", "true");
+    property_override("persist.radio.multisim.config", "dsda");
+    property_override("ro.config.is_start_commril", "true");
+    property_override("ro.config.default_commril_mode", "HISI_CGUL_MODE");
+    property_override("ro.config.fix_commril_mode", "false");
+    property_override("ro.telephony.default_network", "9");
+    property_override("gsm.defaultpdpcontext.active", "true");
+    property_override("persist.radio.m0_ps_allow", "1");
+    property_override("persist.radio.modem_cdma_roam", "false");
+    property_override("ro.config.full_network_support", "false");
 }
