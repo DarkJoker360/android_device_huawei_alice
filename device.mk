@@ -255,8 +255,11 @@ PRODUCT_PACKAGES += \
     libtinyxml \
     libxml2
 
+# VNDK
 PRODUCT_PACKAGES += \
-    vndk-sp
+    libstdc++.vendor \
+    vndk_package
+    
 
 # TextClassifier smart selection model files
 PRODUCT_PACKAGES += \
