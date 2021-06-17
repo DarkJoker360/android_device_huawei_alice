@@ -150,7 +150,7 @@ BOARD_PLAT_PRIVATE_SEPOLICY_DIR += \
 	device/huawei/alice/sepolicy
 
 # Shims
-TARGET_LD_SHIM_LIBS := /system/lib/libcutils.so|libshim_log.so:/system/lib64/libcutils.so|libshim_log.so:/system/lib/libhuaweiprocessing.so|libshim_icu.so:/system/lib/libcamera_core.so|libshim_camera.so:/system/lib/hw/audio.primary.hi6210sft.so|libshim_audioroute.so:/system/lib/hw/audio.primary.hi6210sft.so|libshim_icu.so:/system/lib64/libril.so|libshim_icu.so:/system/lib/libcamera_post_mediaserver.so|libshim_camera.so:/system/lib/libFNVfbEngineLib.so|libshim_gui.so:/system/lib/libcamera_core.so|libshim_gui.so
+TARGET_LD_SHIM_LIBS := /vendor/lib/libcutils.so|libshim_log.so:/vendor/lib64/libcutils.so|libshim_log.so:/vendor/lib/libhuaweiprocessing.so|libshim_icu.so:/vendor/lib/libcamera_core.so|libshim_camera.so:/vendor/lib/hw/audio.primary.hi6210sft.so|libshim_audioroute.so:/vendor/lib/hw/audio.primary.hi6210sft.so|libshim_icu.so:/vendor/lib64/libril.so|libshim_icu.so:/vendor/lib/libcamera_post_mediaserver.so|libshim_camera.so:/vendor/lib/libFNVfbEngineLib.so|libshim_gui.so:/vendor/lib/libcamera_core.so|libshim_gui.so
 
 # VNDK
 # PRODUCT_USE_VNDK_OVERRIDE := false
