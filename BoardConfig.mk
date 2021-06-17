@@ -51,6 +51,7 @@ TARGET_NO_RADIOIMAGE := true
 BOARD_HAVE_BLUETOOTH := true
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(DEVICE_PATH)/bluetooth
 
+
 # Bootanimation
 TARGET_BOOTANIMATION_PRELOAD := true
 TARGET_BOOTANIMATION_TEXTURE_CACHE := true
@@ -120,6 +121,7 @@ BOARD_RECOVERYIMAGE_PARTITION_SIZE := 67108864
 BOARD_SYSTEMIMAGE_PARTITION_SIZE := 2684354560
 BOARD_USERDATAIMAGE_PARTITION_SIZE := 11605639168
 BOARD_CACHEIMAGE_PARTITION_SIZE := 268435456
+BOARD_VENDORIMAGE_PARTITION_SIZE := 504287001
 BOARD_FLASH_BLOCK_SIZE := 131072
 
 # Properties
@@ -149,6 +151,16 @@ BOARD_PLAT_PRIVATE_SEPOLICY_DIR += \
 
 # Shims
 TARGET_LD_SHIM_LIBS := /system/lib/libcutils.so|libshim_log.so:/system/lib64/libcutils.so|libshim_log.so:/system/lib/libhuaweiprocessing.so|libshim_icu.so:/system/lib/libcamera_core.so|libshim_camera.so:/system/lib/hw/audio.primary.hi6210sft.so|libshim_audioroute.so:/system/lib/hw/audio.primary.hi6210sft.so|libshim_icu.so:/system/lib64/libril.so|libshim_icu.so:/system/lib/libcamera_post_mediaserver.so|libshim_camera.so:/system/lib/libFNVfbEngineLib.so|libshim_gui.so:/system/lib/libcamera_core.so|libshim_gui.so
+
+# VNDK
+# PRODUCT_USE_VNDK_OVERRIDE := false
+BOARD_VNDK_VERSION := current
+BOARD_VNDK_RUNTIME_DISABLE := true
+
+BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE := ext4
+PRODUCT_FULL_TREBLE_OVERRIDE := true
+TARGET_COPY_OUT_VENDOR := vendor
+BOARD_PROPERTY_OVERRIDES_SPLIT_ENABLED := true
 
 # inherit from the proprietary version
 -include vendor/huawei/alice/BoardConfigVendor.mk
