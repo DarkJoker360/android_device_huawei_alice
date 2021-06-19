@@ -146,6 +146,7 @@ CONFIG_DRIVER_NL80211		:= y
 TARGET_INIT_VENDOR_LIB := libinit_hi6210sft
 
 # Sepolicy
+SELINUX_IGNORE_NEVERALLOWS := true
 BOARD_PLAT_PRIVATE_SEPOLICY_DIR += \
 	device/huawei/alice/sepolicy
 
