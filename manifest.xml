@@ -42,7 +42,7 @@
          <interface>
              <name>IKeymasterDevice</name>
              <instance>default</instance
-         <interface>
+         </interface>
     </hal>
     <hal format="hidl">
         <name>android.hardware.camera.provider</name>
