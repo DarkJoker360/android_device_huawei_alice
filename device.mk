@@ -152,9 +152,14 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.media.treble_omx=false
 
 # Keymaster
-# PRODUCT_PACKAGES += \
-#    android.hardware.keymaster@3.0-impl \
-#    android.hardware.keymaster@3.0-service
+ PRODUCT_PACKAGES += \
+    android.hardware.keymaster@3.0-impl \
+    android.hardware.keymaster@3.0-service
+
+# Gatekeeper
+PRODUCT_PACKAGES += \
+    android.hardware.gatekeeper@1.0-impl \
+    android.hardware.gatekeeper@1.0-service
 
 # USB
 PRODUCT_PACKAGES += \
@@ -239,10 +244,10 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     ro.magic.api.version=0.1 \
-    persist.sys.usb.config=mtp \
-    ro.secure=0 \
+    persist.sys.usb.config=mtp,adb \
+    ro.secure=1 \
     security.perf_harden=0 \
-    ro.adb.secure=0
+    ro.adb.secure=1
 
 PRODUCT_PACKAGES += \
     busybox \
