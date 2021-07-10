@@ -108,6 +108,9 @@ BOARD_KERNEL_IMAGE_NAME := Image
 TARGET_KERNEL_SOURCE := kernel/huawei/alice
 TARGET_KERNEL_CONFIG := alice_defconfig
 
+# Lights
+TARGET_PROVIDES_LIBLIGHT := true
+
 # Malloc
 MALLOC_SVELTE := true
 
