@@ -48,6 +48,7 @@ on init
     mkdir /splash2
     mkdir /modem_log 0771 system system
     mkdir /mnvm2:0
+    mkdir /modem_fw
     mkdir /sec_storage 600
 
     chmod 0666 /dev/cpuctl
