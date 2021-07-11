@@ -20,7 +20,7 @@
 /dev/block/platform/hi_mci.0/by-name/3rdmodem		/3rdmodem		emmc	nosuid,nodev,noatime											wait,check
 /dev/block/platform/hi_mci.0/by-name/3rdmodemnvm	/3rdmodemnvm		emmc	nosuid,nodev,noatime											wait,check
 /dev/block/platform/hi_mci.0/by-name/3rdmodemnvmback	/3rdmodemnvmback	emmc	nosuid,nodev,noatime											wait,check
-/dev/block/platform/hi_mci.0/by-name/securetystorage	/sec_storage		ext4	nosuid,nodev,noatime,auto_da_alloc,mblk_io_submit,data=journal						wait,check
+/dev/block/platform/hi_mci.0/by-name/securitystorage	/sec_storage		ext4	nosuid,nodev,noatime,auto_da_alloc,mblk_io_submit,data=journal						wait,check
 
 /dev/block/platform/hi_mci.0/by-name/misc      		/misc          		emmc	defaults                                                 						defaults
 /dev/block/platform/hi_mci.0/by-name/boot      		/boot          		emmc    defaults                                                 						defaults
