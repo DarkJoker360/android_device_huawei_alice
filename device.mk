@@ -239,7 +239,7 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     ro.magic.api.version=0.1 \
-    persist.sys.usb.config=mtp \
+    persist.sys.usb.config=mtp,adb \
     ro.secure=0 \
     security.perf_harden=0 \
     ro.adb.secure=0
