@@ -729,7 +729,7 @@ service charger /charger
     critical
     seclabel u:r:charger:s0
 
-service ril-daemon /system/vendor/bin/hw/rild
+service ril-daemon /vendor/bin/hw/rild
     class late_start
     socket rild stream 660 root radio
     socket rildm2 stream 660 root radio
@@ -743,7 +743,7 @@ service ril-daemon /system/vendor/bin/hw/rild
     group radio cache inet misc audio log readproc wakelock net_raw
     capabilities BLOCK_SUSPEND NET_ADMIN NET_RAW
 
-service ril-daemon1 /system/vendor/bin/hw/rild -c 1
+service ril-daemon1 /vendor/bin/hw/rild -c 1
     class late_start
     socket rilds2 stream 660 root radio
     socket rild-debug1 stream 660 radio system
@@ -762,7 +762,7 @@ on property:rild.rild1_ready_to_start=false
 on property:ro.hardware.alter=*
     write /proc/sys/kernel/hardware_alter ${ro.hardware.alter}
 
-service hi110x_ecpt /system/vendor/bin/hi110x_except_logd -wbg -p /data/hwlogdir/exception/ -n 30 -c
+service hi110x_ecpt /vendor/bin/hi110x_except_logd -wbg -p /data/hwlogdir/exception/ -n 30 -c
     class late_start
     user system
     group system root
@@ -770,7 +770,7 @@ service hi110x_ecpt /system/vendor/bin/hi110x_except_logd -wbg -p /data/hwlogdir
     disabled
     writepid /dev/cpuset/system-background/tasks
 
-service hi110x_logd /system/vendor/bin/hi110x_logd
+service hi110x_logd /vendor/bin/hi110x_logd
     class late_start
     user system
     group system root media_rw
@@ -778,7 +778,7 @@ service hi110x_logd /system/vendor/bin/hi110x_logd
     disabled
     writepid /dev/cpuset/system-background/tasks
 
-service octty /system/vendor/bin/octty
+service octty /vendor/bin/octty
     class late_start
     user system
     group system bluetooth root media
@@ -786,7 +786,7 @@ service octty /system/vendor/bin/octty
     disabled
     writepid /dev/cpuset/system-background/tasks
 
-service oam_app /system/vendor/bin/oam_app
+service oam_app /vendor/bin/oam_app
     class late_start
     user system
     group system root wifi bluetooth
@@ -795,7 +795,7 @@ service oam_app /system/vendor/bin/oam_app
     oneshot
     writepid /dev/cpuset/system-background/tasks
 
-service hisi_bfg /system/vendor/bin/start_connectivity_hisi
+service hisi_bfg /vendor/bin/start_connectivity_hisi
     class late_start
     user root
     group system
@@ -803,7 +803,7 @@ service hisi_bfg /system/vendor/bin/start_connectivity_hisi
     seclabel u:r:hi110x_daemon:s0
     writepid /dev/cpuset/system-background/tasks
 
-service watchlssd /system/vendor/xbin/gnss_watchlssd_thirdparty
+service watchlssd /vendor/xbin/gnss_watchlssd_thirdparty
     class late_start
     user system
     group system inet net_raw
@@ -824,7 +824,7 @@ on property:setup_hi110x_modules=success
     start hi110x_logd
     start hi110x_ecpt
 
-service p2p_supplicant /system/vendor/bin/hw/wpa_supplicant -d \
+service p2p_supplicant /vendor/bin/hw/wpa_supplicant -d \
     -iwlan0 -Dnl80211 -c/data/misc/wifi/wpa_supplicant.conf \
     -I/system/vendor/etc/wifi/wpa_supplicant_overlay.conf \
     -m/data/misc/wifi/p2p_supplicant.conf \
@@ -836,7 +836,7 @@ service p2p_supplicant /system/vendor/bin/hw/wpa_supplicant -d \
     disabled
     oneshot
 
-service wpa_supplicant /system/vendor/bin/hw/wpa_supplicant -d \
+service wpa_supplicant /vendor/bin/hw/wpa_supplicant -d \
     -iwlan0 -Dnl80211 -c/data/misc/wifi/wpa_supplicant.conf \
     -I/system/vendor/etc/wifi/wpa_supplicant_overlay.conf \
     -O/data/misc/wifi/sockets \
@@ -846,7 +846,7 @@ service wpa_supplicant /system/vendor/bin/hw/wpa_supplicant -d \
     disabled
     oneshot
 
-service macaddr /system/vendor/bin/mac_addr_normalization
+service macaddr /vendor/bin/mac_addr_normalization
     class late_start
     user root
     group root bluetooth bluetooth wifi
@@ -854,7 +854,7 @@ service macaddr /system/vendor/bin/mac_addr_normalization
     oneshot
     writepid /dev/cpuset/system-background/tasks
 
-service hsgnss /system/vendor/bin/gnss_engine -normal
+service hsgnss /vendor/bin/gnss_engine -normal
     class late_start
     user system
     group system inet root wakelock
@@ -862,7 +862,7 @@ service hsgnss /system/vendor/bin/gnss_engine -normal
     disabled
     writepid /dev/cpuset/system-background/tasks
 
-service agnsscontrol /system/vendor/bin/agnsscontrol -normal
+service agnsscontrol /vendor/bin/agnsscontrol -normal
     class late_start
     user system
     group system inet root wakelock
@@ -870,7 +870,7 @@ service agnsscontrol /system/vendor/bin/agnsscontrol -normal
     disabled
     writepid /dev/cpuset/system-background/tasks
 
-service supl20clientd /system/vendor/bin/gnss_supl20clientd_hisi
+service supl20clientd /vendor/bin/gnss_supl20clientd_hisi
     class main
     user system
     group system inet
@@ -878,7 +878,7 @@ service supl20clientd /system/vendor/bin/gnss_supl20clientd_hisi
     disabled
     writepid /dev/cpuset/system-background/tasks
 
-service agnsslog /system/vendor/bin/agnsslog
+service agnsslog /vendor/bin/agnsslog
     class late_start
     user system
     group system inet root wakelock
@@ -886,13 +886,13 @@ service agnsslog /system/vendor/bin/agnsslog
     disabled
     writepid /dev/cpuset/system-background/tasks
 
-service atcmdserver /system/vendor/bin/atcmdserver
+service atcmdserver /vendor/bin/atcmdserver
     class main
     seclabel u:r:atcmdserver:s0
     disabled
     writepid /dev/cpuset/system-background/tasks
 
-service diagserver /system/vendor/bin/diagserver
+service diagserver /vendor/bin/diagserver
     class main
     user root
     seclabel u:r:diagserver:s0
@@ -953,7 +953,7 @@ service logserver /system/vendor/bin/logserver
     oneshot
     writepid /dev/cpuset/system-background/tasks
 
-service thermal-daemon /system/vendor/bin/thermal-daemon
+service thermal-daemon /vendor/bin/thermal-daemon
     class main
     user system 
     group system
@@ -973,7 +973,7 @@ on property:bluetooth.log.file.create=true
    setprop bluetooth.log.file.create false
    chown bluetooth bluetooth /dev/hwbt
 
-service lmk_config /system/bin/sh /system/vendor/bin/lmk_config.sh
+service lmk_config /system/bin/sh /vendor/bin/lmk_config.sh
     class late_start
     user root
     group system shell
@@ -984,7 +984,7 @@ service lmk_config /system/bin/sh /system/vendor/bin/lmk_config.sh
 on property:sys.boot_completed=1
     start lmk_config
 
-service nfc_hal_ext_service /system//vendor/bin/hw/vendor.huawei.hardware.nfc@1.0-service
+service nfc_hal_ext_service /vendor/bin/hw/vendor.huawei.hardware.nfc@1.0-service
     class hal
     user nfc
     group nfc
