@@ -826,7 +826,7 @@ on property:setup_hi110x_modules=success
 
 service p2p_supplicant /vendor/bin/hw/wpa_supplicant -d \
     -iwlan0 -Dnl80211 -c/data/misc/wifi/wpa_supplicant.conf \
-    -I/system/vendor/etc/wifi/wpa_supplicant_overlay.conf \
+    -I/vendor/etc/wifi/wpa_supplicant_overlay.conf \
     -m/data/misc/wifi/p2p_supplicant.conf \
     -O/data/misc/wifi/sockets \
     -puse_p2p_group_interface=1p2p_device=1 \
@@ -838,7 +838,7 @@ service p2p_supplicant /vendor/bin/hw/wpa_supplicant -d \
 
 service wpa_supplicant /vendor/bin/hw/wpa_supplicant -d \
     -iwlan0 -Dnl80211 -c/data/misc/wifi/wpa_supplicant.conf \
-    -I/system/vendor/etc/wifi/wpa_supplicant_overlay.conf \
+    -I/vendor/etc/wifi/wpa_supplicant_overlay.conf \
     -O/data/misc/wifi/sockets \
     -e/data/misc/wifi/entropy.bin -g@android:wpa_wlan0
     class main
@@ -945,7 +945,7 @@ on data_not_ready
     setprop sys.userdata_is_ready 0
     write /proc/post-fs-data 0
 
-service logserver /system/vendor/bin/logserver
+service logserver /vendor/bin/logserver
     class late_start
     user root
     group system
