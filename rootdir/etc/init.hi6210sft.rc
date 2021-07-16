@@ -32,11 +32,11 @@ on early-init
     mount debugfs /sys/kernel/debug /sys/kernel/debug mode=0755
 
 on init
-    mkdir /cust
     mkdir /3rdmodem
     mkdir /3rdmodemnvm
     mkdir /3rdmodemnvmbkp
     mkdir /sec_storage
+    mkdir /vendor
     mkdir /splash2
     mkdir /modem_log 0771 system system
     mkdir /mnvm2:0
