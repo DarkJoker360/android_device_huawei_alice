@@ -82,13 +82,7 @@ TARGET_OMX_LEGACY_RESCALING := true
 BOARD_SUPPORTS_DOZE_POWER_MODES := true
 
 # Dexpreopt
-ifeq ($(HOST_OS),linux)
-  ifneq ($(TARGET_BUILD_VARIANT),eng)
-    ifeq ($(WITH_DEXPREOPT),)
-      WITH_DEXPREOPT := true
-    endif
-  endif
-endif
+WITH_DEXPREOPT := true
 
 # Extended Filesystem Support
 TARGET_EXFAT_DRIVER := exfat
