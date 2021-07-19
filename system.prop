@@ -13,6 +13,7 @@ ro.config.media_vol_steps=20
 ro.config.vc_call_vol_steps=7
 
 # Camera
+camera.disable_zsl_mode=1
 camera2.portability.force_api=1
 ro.camera.beauty.algo.doc=1
 ro.hwcamera.use.videosize.1080p=true
