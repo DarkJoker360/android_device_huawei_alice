@@ -934,7 +934,7 @@ on data_ready
     write /proc/post-fs-data 1
     write /proc/apanic_console 1
     setprop sys.usb.start_atdiag ${sys.usb.start_atdiag}
-    setprop sys.usb.start_modempcui ${sys.usb.start_modempcui}
+    setprop sys.usb.start_modempcui 0
 
 on data_not_ready
     setprop sys.userdata_is_ready 0
