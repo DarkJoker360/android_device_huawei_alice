@@ -173,6 +173,8 @@
             <instance>rildi2</instance>
             <instance>rildc1</instance>
             <instance>rildc2</instance>
+            <instance>slot1</instance>
+            <instance>slot2</instance>
         </interface>
     </hal>
     <hal format="hidl">
