@@ -979,7 +979,7 @@ service lmk_config /system/bin/sh /system/vendor/bin/lmk_config.sh
 on property:sys.boot_completed=1
     start lmk_config
 
-service nfc_hal_ext_service /system//vendor/bin/hw/vendor.huawei.hardware.nfc@1.0-service
+service nfc_hal_ext_service /system/vendor/bin/hw/vendor.huawei.hardware.nfc@1.0-service
     class hal
     user nfc
     group nfc
