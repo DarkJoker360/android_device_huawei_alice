@@ -253,6 +253,7 @@ on post-fs-data
     restorecon_recursive /data/memdump
     restorecon_recursive /data/hwlogdir
     restorecon_recursive /data/gnss
+    mkdir /data/misc/bluedroid 0770 bluetooth bluetooth
     mkdir /data/misc/wifi 0770 wifi wifi
     mkdir /data/misc/wifi/hostapd 0770 wifi wifi
     mkdir /data/misc/wifi/sockets 0770 wifi wifi
