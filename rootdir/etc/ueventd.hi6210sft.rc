@@ -4,6 +4,8 @@ subsystem graphics_compose
 
 /dev/mali                 0666 system graphics
 /dev/ion                  0664 system system
+/dev/graphics/ade         0660 system system
+/dev/graphics/fb0         0660 system system
 /dev/video0               0660 system camera 
 /dev/cnm_jpu              0660 system camera
 /dev/cnm_vpu              0660 system camera
