@@ -8,7 +8,7 @@
 #include <cutils/log.h>
 #include <cutils/properties.h>
 
-#define NVME_PATH "/dev/block/platform/hi_mci.0/by-name/nvme"
+#define NVME_PATH "/dev/block/mmcblk0p7"
 
 #define MAC_LEN 12 // mac length without ':'
 #define MAC_ENTRY_MAX_LEN 28 // max length of mac entry inside nvme
