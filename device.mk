@@ -264,8 +264,8 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libstdc++.vendor \
     vndk_package \
-    vndk-sp
-    
+    vndk-sp \
+    libbt-vendor
 
 # TextClassifier smart selection model files
 PRODUCT_PACKAGES += \
